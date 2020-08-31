@@ -1,0 +1,12 @@
+1. 查看有哪些 topics
+kafka-topics --list --zookeeper localhost:2181
+
+
+创建一个topic
+kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+
+发送数据
+kafka-console-producer --broker-list dev201:9092 --topic test
+
+2. 启动一个消费者
+kafka-console-consumer --bootstrap-server dev201:9092 --topic test --from-beginning
